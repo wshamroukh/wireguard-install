@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Secure WireGuard server installer
-# https://github.com/angristan/wireguard-install
+# https://github.com/wshamroukh/wireguard-install
 
 RED='\033[0;31m'
 ORANGE='\033[0;33m'
@@ -67,7 +67,7 @@ function initialCheck() {
 
 function installQuestions() {
 	echo "Welcome to the WireGuard installer!"
-	echo "The git repository is available at: https://github.com/angristan/wireguard-install"
+	echo "The git repository is available at: https://github.com/wshamroukh/wireguard-install"
 	echo ""
 	echo "I need to ask you a few questions before starting the setup."
 	echo "You can leave the default options and just press enter if you are ok with them."
@@ -448,7 +448,7 @@ function generateQRCode(){
 
 function manageMenu() {
 	echo "Welcome to WireGuard-install!"
-	echo "The git repository is available at: https://github.com/angristan/wireguard-install"
+	echo "The git repository is available at: https://github.com/wshamroukh/wireguard-install"
 	echo ""
 	echo "It looks like WireGuard is already installed."
 	echo ""
