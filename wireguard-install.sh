@@ -206,6 +206,7 @@ function installWireGuard() {
 	systemctl start "wg-quick@${SERVER_WG_NIC}"
 	systemctl enable "wg-quick@${SERVER_WG_NIC}"
 
+	# Calling the newClient function to create the first client
 	newClient
 	echo "If you want to add more clients, you simply need to run this script another time!"
 
@@ -322,7 +323,7 @@ function newClient() {
 	wg syncconf "${SERVER_WG_NIC}" <(wg-quick strip "${SERVER_WG_NIC}")
 
 	echo -e "\nHere is your client config file as a QR Code:"
-
+	# Generate QR code for the client configuration
 	qrencode -t ansiutf8 -l L <"${HOME_DIR}/${SERVER_WG_NIC}-client-${CLIENT_NAME}.conf"
 
 	echo "It is also available in ${HOME_DIR}/${SERVER_WG_NIC}-client-${CLIENT_NAME}.conf"
